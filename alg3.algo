@@ -1,0 +1,85 @@
+
+//-------------- procedure----//////
+
+PROCEDURE dot_PRO(var vector1,vector2:ARRAY_OF INTEGER; var ps: INTEGER)
+VAR
+    i: INTEGER
+BEGIN
+   
+    ps:=0
+    IF (vector1.length <> vector2.length) THEN
+      write('Error :vectors are differents size ')
+      ELSE
+      WHILE (i < vector1.length) DO
+       ps:= ps+(vector[i]*vector2[i])
+       i++ ;
+
+      END_WHILE
+   
+  END_IF
+
+
+
+   
+     ALGORITHM ALGO3
+     VAR
+      vector1 , vector2:ARRAY_OF INTEGER[30]
+      ps : INTEGER ;
+
+     BEGIN
+      dot_PRO(vector1,vector2,ps)
+      IF(ps=0) THEN
+      write('vector1 and vector2 are orthogonal')
+      ELSE
+      write('vector1 and vector2 are not orthogonal')
+     END_IF
+     END
+   
+
+
+
+///-------function---////
+
+FUNCTION dot_FUN(vector1,vector2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    
+    ps , i: INTEGER
+    
+    
+BEGIN
+  ps:=0 ;
+  i:=0;
+
+  IF (vector1.length<> vector2.length) THEN
+  write('Error :vectors are differents size ')
+      ELSE
+      WHILE (i < vector1.length) DO
+       ps:= ps+(vector[i]*vector2[i])
+       i++ ;
+
+      END_WHILE
+   
+  END_IF
+RETURN ps ;
+
+    
+    
+
+
+
+END
+
+ALGORITHM ALGO32
+     VAR
+      vector1 , vector2:ARRAY_OF INTEGER[30]
+      ps : INTEGER ;
+
+     BEGIN
+     ps :=dot_FUN(vector1,vector2)
+      IF(ps=0) THEN
+      write('vector1 and vector2 are orthogonal')
+      ELSE
+      write('vector1 and vector2 are not orthogonal')
+     END_IF
+     END
+   
